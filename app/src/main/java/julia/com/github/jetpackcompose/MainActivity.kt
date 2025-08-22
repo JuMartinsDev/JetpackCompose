@@ -27,10 +27,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.border
-
-
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,8 +47,8 @@ class MainActivity : ComponentActivity() {
         Column(modifier = modifier.background(color = Color.Blue)) {
             TextoCustomizado("Primeira função composable.")
             Row {
-                TextoCustomizado("Seja bem vindo!")
-                TextoCustomizado("Olá usuário.")
+                TextoCustomizado("Seja bem vinda ao App!")
+                TextoCustomizado("Olá Julia.")
             }
         }
     }
@@ -88,7 +84,7 @@ class MainActivity : ComponentActivity() {
     @Composable
     fun CardMensagem(modifier: Modifier = Modifier) {
         Row(modifier = modifier.padding(16.dp)) {
-            Image(
+        Image(
                 painter = painterResource(id = R.drawable.avatar),
                 contentDescription = "Foto do contato",
                 modifier = Modifier
@@ -100,9 +96,9 @@ class MainActivity : ComponentActivity() {
             Spacer(modifier = Modifier.width(8.dp))
 
             Column {
-                Text(text = "Autor da mensagem")
+                Text(text = "Julia Martins")
                 Spacer(modifier = Modifier.height(4.dp))
-                Text(text = "Conteúdo da mensagem")
+                Text(text = "Bem vinda ao App Composable!")
             }
         }
     }
@@ -112,7 +108,6 @@ class MainActivity : ComponentActivity() {
     fun PreviewFuncaoInicial() {
         JetpackComposeTheme {
             Inicial()
-            TesteModifier()
         }
     }
 
@@ -130,35 +125,5 @@ class MainActivity : ComponentActivity() {
         JetpackComposeTheme {
             CardMensagem()
         }
-    }
-
-    @Composable
-    fun TesteModifier() {
-        Column {
-            Text(
-                text = "Item 1",
-                modifier = Modifier
-                    .border(border = BorderStroke(width = 1.dp, color = Color.Green))
-                    .padding(horizontal = 8.dp)
-            )
-
-            Spacer(modifier = Modifier.height(8.dp))
-
-            Text(
-                text = "Item 1",
-                modifier = Modifier
-                    .border(border = BorderStroke(width = 1.dp, color = Color.Green))
-                    .padding(horizontal = 8.dp, vertical = 8.dp)
-            )
-
-            Text(
-                text = "Item 1",
-                modifier = Modifier
-                    .padding(horizontal = 8.dp)
-                    .border(border = BorderStroke(width = 1.dp, color = Color.Green))
-            )
-
-        }
-
     }
 }
