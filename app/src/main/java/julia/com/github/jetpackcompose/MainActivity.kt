@@ -27,6 +27,11 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
+import julia.com.github.jetpackcompose.componentes.SimpleTextField
+import julia.com.github.jetpackcompose.componentes.SimpleOutlineTextField
+
+
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,7 +41,9 @@ class MainActivity : ComponentActivity() {
             JetpackComposeTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     //NotificationBage(Modifier.padding(innerPadding))
-                    CardMensagem(Modifier.padding(innerPadding))
+                    //SimpleTextField(Modifier.padding(innerPadding))
+                    SimpleOutlineTextField(Modifier.padding(innerPadding))
+
                 }
             }
         }
